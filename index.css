@@ -7,8 +7,6 @@ body {
 }
 
 #bar-chart {
-    width: 900px;
-    height: 560px;
     background-color: #fff;
     display: flex;
     align-items: center;
@@ -18,11 +16,37 @@ body {
     box-shadow: 2px 2px 20px;
 }
 
-.bar {
-    cursor: pointer;
-    border: 1px solid red;
-}
-
 .bar:hover {
     fill: #ebf7ff;
+}
+
+.tooltip {
+    position: absolute;
+    top: 67.5%;
+    background-color: rgba(158, 158, 158, 0.8);
+    border: 1px solid #333;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 1rem;
+    z-index: 1;
+    pointer-events: none;
+    animation: fadeInAnimation ease-in 0.25s;
+    box-shadow: 2px 2px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.tooltip p {
+    margin: 0;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
