@@ -11,7 +11,7 @@ const tooltipWidth = 125;
 export default function App() {
   const [data, setData] = useState([])
   const [tooltipYearText, setTooltipYearText] = useState(null)
-  const [tooltipGDPrText, setTooltipGDPText] = useState(null)
+  const [tooltipGDPText, setTooltipGDPText] = useState(null)
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 })
 
   const svgRef = useRef()
@@ -63,11 +63,9 @@ export default function App() {
         .domain([0, d3.max(data, d => d[1])])
         .range([height - padding, padding]);
 
-
       const xAxis = d3.axisBottom(xScale)
       const yAxis = d3.axisLeft(yScale)
 
-      
       svg.selectAll("rect")
       .data(data)
       .enter()
@@ -134,7 +132,7 @@ export default function App() {
             }}
           >
             <p>{tooltipYearText}</p>
-            <p>{tooltipGDPrText}</p>
+            <p>{tooltipGDPText}</p>
           </div>
         )}
       </div>
